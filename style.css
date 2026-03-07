@@ -6,14 +6,20 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
+main{
+    margin-top: 120px;
+}
+
 body {
     background-color: #000;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .interface {
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0 4%;
 }
 
 .flex {
@@ -43,31 +49,37 @@ h2.titulo span {
 
 button:hover,
 form .btn-enviar input:hover {
-    box-shadow: 0px 0px 8px #0453C9;
+    box-shadow: #0453C9;
     transform: scale(1.05);
 }
 
 
 /* ESTILO DO CABEÇALHO*/
 .header{
+    
     max-width: 40px 4%;
     align-items: center;
    
 }
 
 .header-menu{
-    font-size: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding:34px ;
-    margin: 0 auto;
+    gap: 40px;
+    padding: 35px 0;
+    /* Adicione a linha abaixo: */
+    z-index: 9999;
     
 
 }
 
 .header-menu a{
+    
     font-size: 1.125rem;
     line-height:1.3 ;
     padding: 10px 10px;
@@ -93,22 +105,25 @@ nav a:active{
     color: #0453C9 ;
     border-bottom: 3px solid #0453C9;
 }
-
+main{
+    margin-top: 120px;
+}
 
 
 /* ESTILO DO TOPO DO SITE */
 section.topo-do-site{
     max-width: 1420px;
     padding: 40px 4%;
+    scroll-margin-top: 140px;
     
 
 }
 
 section.topo-do-site .flex{
     align-items: center;
-    justify-content: center;
-    gap: 90px;
-    padding-left: 110px;
+    justify-content: space-between;
+    gap: 60px;
+    padding-left: 90px;
     
     
 
@@ -118,7 +133,7 @@ section.topo-do-site .flex{
 .topo-do-site h1{
     color: white;
     font-size: 42px;
-    line-height: 40px;
+    line-height:1.2;
     
     
     
@@ -166,6 +181,7 @@ img{
 
 section.sobre{
     padding: 40px 5%;
+     scroll-margin-top: 0px;
 }
 
 .img-sobre{
@@ -217,46 +233,50 @@ section.sobre .flex{
 }
 
 /*ESTILO DAS ESPECIALIDADES*/
-section.especiliadades {
+
+section.especialidades {
+    
     padding: 40px 0%;
     text-align: center;
+     scroll-margin-top: 110px;
 }
 
-section.especiliadades .flex {
+section.especialidades .flex {
+    align-items: center;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 60px;
 
 }
 
-.especiliadades .especialidades-box {
+.especialidades .especialidades-box {
     flex: 1;    
     color: #fff;
-    padding: 50px;
+    padding: 80px;
     border-radius: 20px;
-    margin-top: 50px;
+    margin-top: 70px;
     transition: .2s;
 }
 
-.especiliadades .especialidades-box:hover {
+.especialidades .especialidades-box:hover {
     transform: scale(1.05);
     box-shadow: 0 0 8px #ffffff78;
 }
 
-.especiliadades .especialidades-box i {
+.especialidades .especialidades-box i {
     font-size: 70px;
     color: #0453C9;
 }
 
-.especiliadades .especialidades-box h3 {
+.especialidades.especialidades-box h3 {
     font-size: 28px;
     margin: 15px 0;
 }
 
 /* ESTILO DO PORTFÓLIO*/
 section.portfolio{
-    padding: 80px 4%;
-    box-shadow: 0px 0px 40px 10px rgba(255, 255, 255, 0.096)
+     padding: 80px 4%;
+    scroll-margin-top: 140px;
 }
 
 section.portfolio .flex{
@@ -306,4 +326,159 @@ section.portfolio .flex{
 
 .overlay:hover{
     opacity: 1;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+
+    .flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img-topo-site img,
+    .img-sobre img {
+        width: 250px;
+        height: auto;
+    }
+
+    main {
+        margin-top: 150px;
+    }
+}
+
+.contact {
+    padding: 80px 4%;
+}
+
+.contact h2 {
+    text-align: center;
+    color: #f3f3f3;
+    margin-bottom: 3rem;
+    font-size: 38px;
+}
+
+.contact h2 span {
+    color: #0453C9;
+}
+
+.contact form {
+    max-width: 800px; /* Aumentei um pouco para ficar mais elegante */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Coloca os inputs lado a lado */
+.contact .input-box {
+    display: flex;
+    gap: 20px;
+}
+
+.contact .input-box input {
+    flex: 1; /* Faz cada um ocupar 50% da linha */
+}
+
+/* Estilo padrão para todos os campos */
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 18px;
+    background: #0f0f0f; /* Um cinza bem escuro fica melhor que transparente */
+    border: 2px solid #1a3cff;
+    border-radius: 15px; /* Arredondamento mais sutil é mais moderno */
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Efeito de foco ao clicar */
+.contact input:focus, 
+.contact textarea:focus {
+    box-shadow: 0 0 15px rgba(4, 83, 201, 0.4);
+    border-color: #0453C9;
+}
+
+.contact textarea {
+    height: 180px;
+    resize: none; /* Impede o usuário de bagunçar o layout puxando o canto */
+}
+
+/* Centralização do Botão */
+.btn-enviar-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-enviar {
+    background-color: #0453C9; 
+    color: white;
+    padding: 15px 50px;
+    border-radius: 30px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: #0341a3;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(4, 83, 201, 0.6);
+}
+
+@media (max-width: 600px) {
+    .contact .input-box {
+        flex-direction: column;
+    }
+}
+
+.footer {
+    background-color: #0c1625;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo no footer */
+    gap: 30px;
+}
+
+.footer .btn-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer ul.li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #0453C9;
+}
+
+.footer-msg {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-msg p {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
