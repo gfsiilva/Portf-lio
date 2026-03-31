@@ -34,6 +34,7 @@ body {
 
 .btn-contato button {
     padding: 10px 40px;
+    color: #fff;
     font-size: 18px;
     font-weight: 600;
     background-color: #0453C9;
@@ -266,6 +267,12 @@ section.especialidades .flex {
     gap: 60px;
 
 }
+.especialidades-box h3 {
+    color: #0453C9; 
+}
+.especialidades-box p {
+    margin-top: 20px;
+}
 
 .especialidades .especialidades-box {
     flex: 1;    
@@ -290,6 +297,7 @@ section.especialidades .flex {
     font-size: 28px;
     margin: 15px 0;
 }
+
 
 /* ESTILO DO PORTFÓLIO*/
 section.portfolio{
